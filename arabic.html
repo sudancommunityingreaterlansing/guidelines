@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دليل إنشاء منظمة سودانية غير ربحية - لانسينغ، ميشيغان</title>
+    <style>
+        :root {
+            --primary: #006400;
+            --secondary: #DAA520;
+            --accent: #8B0000;
+            --light: #f8f9fa;
+            --dark: #333;
+            --gray: #6c757d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', 'Arial', sans-serif;
+            line-height: 1.8;
+            color: var(--dark);
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, #228B22 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Arial', sans-serif;
+        }
+        
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .flag {
+            display: inline-block;
+            width: 30px;
+            height: 20px;
+            background: linear-gradient(to bottom, red 33%, white 33%, white 66%, black 66%, black 100%);
+            margin: 0 10px;
+            vertical-align: middle;
+            border: 1px solid #ccc;
+        }
+        
+        .progress-container {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .progress-bar {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin: 2rem 0;
+        }
+        
+        .progress-bar::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: 0;
+            left: 0;
+            height: 4px;
+            background: var(--light);
+            transform: translateY(-50%);
+            z-index: 1;
+        }
+        
+        .progress-step {
+            position: relative;
+            z-index: 2;
+            background: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            border: 3px solid var(--light);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .progress-step.active {
+            border-color: var(--primary);
+            background: var(--primary);
+            color: white;
+        }
+        
+        .progress-step.completed {
+            border-color: var(--secondary);
+            background: var(--secondary);
+            color: white;
+        }
+        
+        .step-label {
+            position: absolute;
+            top: 45px;
+            white-space: nowrap;
+            font-size: 0.9rem;
+            color: var(--gray);
+            width: 100px;
+            text-align: center;
+            right: -30px;
+        }
+        
+        .content-section {
+            display: none;
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .content-section.active {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        h2 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--secondary);
+            text-align: right;
+        }
+        
+        h3 {
+            color: var(--accent);
+            margin: 1.5rem 0 1rem 0;
+            text-align: right;
+        }
+        
+        .timeline {
+            position: relative;
+            padding-right: 30px;
+            margin: 2rem 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--secondary);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+            padding-right: 20px;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            right: -33px;
+            top: 5px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: var(--primary);
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px var(--secondary);
+        }
+        
+        .timeline-date {
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            text-align: right;
+        }
+        
+        .checklist {
+            list-style: none;
+            margin: 1rem 0;
+            text-align: right;
+        }
+        
+        .checklist li {
+            padding: 0.5rem 2rem 0.5rem 0;
+            position: relative;
+            margin-bottom: 0.5rem;
+        }
+        
+        .checklist li::before {
+            content: '✓';
+            position: absolute;
+            right: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            text-align: right;
+        }
+        
+        .comparison-table th, .comparison-table td {
+            padding: 12px;
+            border: 1px solid #ddd;
+        }
+        
+        .comparison-table th {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .cost-box {
+            background: #f8f9fa;
+            border-right: 4px solid var(--secondary);
+            padding: 1rem;
+            margin: 1rem 0;
+            text-align: right;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            margin: 0.5rem;
+            transition: background 0.3s;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        .btn:hover {
+            background: #004d00;
+        }
+        
+        .btn-secondary {
+            background: var(--secondary);
+        }
+        
+        .btn-secondary:hover {
+            background: #b8860b;
+        }
+        
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+        }
+        
+        .download-section {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .resource-card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-right: 4px solid var(--primary);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-align: right;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 2rem;
+            background: var(--dark);
+            color: white;
+            border-radius: 10px;
+        }
+        
+        .arabic-note {
+            background: #fff3cd;
+            border-right: 4px solid #ffc107;
+            padding: 1rem;
+            margin: 1rem 0;
+            text-align: right;
+        }
+        
+        .bylaws-section {
+            background: #e8f5e9;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border: 2px solid var(--primary);
+        }
+        
+        .bylaws-header {
+            text-align: center;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #ddd;
+            font-family: 'Traditional Arabic', serif;
+        }
+        
+        .bylaws-content {
+            font-family: 'Traditional Arabic', 'Arial', sans-serif;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            max-height: 500px;
+            overflow-y: auto;
+            line-height: 2;
+            font-size: 1.1rem;
+        }
+        
+        .bylaws-content ol, .bylaws-content ul {
+            margin-right: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .progress-bar {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .progress-step {
+                margin: 0 10px 30px;
+            }
+            
+            .container {
+                padding: 10px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>دليل إنشاء منظمة مجتمع سوداني غير ربحية <span class="flag"></span> لانسينغ، ميشيغان</h1>
+            <p class="subtitle">دليل خطوة بخطوة لتأسيس منظمتكم المجتمعية مع مراعاة الاعتبارات الثقافية</p>
+            <p><strong>الوقت المقدر للإكمال:</strong> ٦-٨ أشهر | <strong>تكلفة البدء:</strong> ٥٠٠-٣٥٠ دولار (بدون مساعدة قانونية)</p>
+        </header>
+
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar">
+                <div class="progress-step active" data-step="1">
+                    ١
+                    <span class="step-label">التخطيط</span>
+                </div>
+                <div class="progress-step" data-step="2">
+                    ٢
+                    <span class="step-label">التأسيس القانوني</span>
+                </div>
+                <div class="progress-step" data-step="3">
+                    ٣
+                    <span class="step-label">تشكيل المجالس</span>
+                </div>
+                <div class="progress-step" data-step="4">
+                    ٤
+                    <span class="step-label">اللائحة الداخلية</span>
+                </div>
+                <div class="progress-step" data-step="5">
+                    ٥
+                    <span class="step-label">الإعفاء الضريبي</span>
+                </div>
+                <div class="progress-step" data-step="6">
+                    ٦
+                    <span class="step-label">الامتثال الحكومي</span>
+                </div>
+                <div class="progress-step" data-step="7">
+                    ٧
+                    <span class="step-label">الإطلاق</span>
+                </div>
+            </div>
+            
+            <div class="nav-buttons">
+                <button class="btn" id="prevBtn">الخطوة السابقة</button>
+                <span id="stepIndicator">الخطوة ١ من ٧: مرحلة التخطيط</span>
+                <button class="btn" id="nextBtn">الخطوة التالية</button>
+            </div>
+        </div>
+
+        <!-- Step 1: Planning -->
+        <div class="content-section active" id="step1">
+            <h2>المرحلة الأولى: التأسيس والتخطيط</h2>
+            
+            <div class="arabic-note">
+                <strong>ملاحظة هامة:</strong> هذا الدليل مصمم خصيصاً للمجتمع السوداني في لانسينغ، ميشيغان، مع مراعاة التقاليد الثقافية السودانية.
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">الشهر ١-٢</div>
+                    <h3>تقييم احتياجات المجتمع السوداني</h3>
+                    <p><strong>أسئلة رئيسية للمجتمع السوداني:</strong></p>
+                    <ul class="checklist">
+                        <li>ما هي أكبر التحديات التي تواجه الأسر السودانية في لانسينغ؟</li>
+                        <li>ما هي التقاليد الثقافية الأكثر أهمية للحفاظ عليها؟</li>
+                        <li>كم عدد الطلاب السودانيين في جامعة ميشيغان الحكومية (MSU)؟ وما احتياجاتهم؟</li>
+                        <li>ما هو التنوع الإقليمي والقبلي الموجود في مجتمعنا؟</li>
+                        <li>ما الموارد المتاحة حالياً مقابل ما هو مطلوب؟</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-item">
+                    <h3>صياغة بيان المهمة</h3>
+                    <p><strong>نموذج مقترح:</strong></p>
+                    <div class="resource-card">
+                        <em>"توجد جمعية المجتمع السوداني الأمريكي في لانسينغ (SACA-Lansing) للحفاظ على التراث الثقافي السوداني وتعزيزه، وتعزيز الوحدة بين الشتات السوداني، ودعم اندماج القادمين الجدد بنجاح، والإسهام إيجابياً في مجتمع لانسينغ الأوسع من خلال التعليم والدعم المتبادل."</em>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <h3>مميزات خاصة بمدينة لانسينغ</h3>
+                    <ul class="checklist">
+                        <li><strong>شراكة مع جامعة ميشيغان الحكومية:</strong> مركز الدراسات الأفريقية، مكتب الانتقال الأكاديمي والثقافي</li>
+                        <li><strong>موارد العاصمة:</strong> اتصالات حكومية، فرص تمويل</li>
+                        <li><strong>شبكات موجودة:</strong> مركز تطوير اللاجئين، مجتمعات بين الأديان</li>
+                        <li><strong>مركز ثقافي:</strong> مجتمع الشتات الأفريقي المتنامي في لانسينغ الكبرى</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <button class="btn" onclick="markStepComplete(1)">ضع علامة إكمال لهذه الخطوة</button>
+        </div>
+
+        <!-- Step 2: Legal Formation -->
+        <div class="content-section" id="step2">
+            <h2>المرحلة الثانية: التأسيس القانوني (ميشيغان)</h2>
+            
+            <h3>الخطوات خطوة بخطوة</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">الشهر ٢</div>
+                    <h3>اختيار وتأمين الاسم</h3>
+                    <ul class="checklist">
+                        <li>البحث في قاعدة بيانات مؤسسات ميشيغان (LARA)</li>
+                        <li>تأكد من احتواء الاسم على "سوداني" للهوية الثقافية</li>
+                        <li>اقتراح: "جمعية المجتمع السوداني في لانسينغ"</li>
+                        <li>التحقق من توفر نطاق الموقع الإلكتروني</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-item">
+                    <h3>صياغة النظام الأساسي - اعتبارات ثقافية</h3>
+                    <p><strong>أحكام رئيسية للسياق السوداني:</strong></p>
+                    <ul class="checklist">
+                        <li>تحديد "المجتمع السوداني" بشكل شامل (جميع المناطق والقبائل)</li>
+                        <li>مستويات عضوية مع خيارات مالية مناسبة للطلاب والقادمين الجدد</li>
+                        <li>حقوق تصويت تحترم كبار السن والشباب</li>
+                        <li>لجان ثقافية: اللغة، الشباب، النساء، دعم القادمين الجدد</li>
+                        <li>عملية حل النزاعات التي تحترم الوساطة التقليدية</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-item">
+                    <h3>تقديم وثائق التأسيس</h3>
+                    <div class="cost-box">
+                        <strong>النموذج ١٠٢ مع ولاية ميشيغان (LARA)</strong><br>
+                        رسوم التقديم: ٢٠ دولار<br>
+                        وقت المعالجة: ٧-١٠ أيام عمل
+                    </div>
+                    <p><strong>مثال على بيان الغرض:</strong></p>
+                    <p><em>"لتعزيز التراث الثقافي السوداني من خلال البرامج التعليمية، المهرجانات، والحفاظ على اللغة؛ لتقديم المساعدة الخيرية للمهاجرين واللاجئين السودانيين في الاندماج؛ لتعزيز الدعم المتبادل وتنمية المجتمع بين السودانيين الأمريكيين في منطقة لانسينغ..."</em></p>
+                </div>
+                
+                <div class="timeline-item">
+                    <h3>الحصول على رقم التعريف الضريبي (EIN)</h3>
+                    <ul class="checklist">
+                        <li>تقديم مجاني عبر الإنترنت في موقع IRS.gov (النموذج SS-4)</li>
+                        <li>مطلوب لـ: فتح حساب بنكي، التوظيف، الإعفاء الضريبي</li>
+                        <li>يتم استلامه فوراً عبر الإنترنت</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <button class="btn" onclick="markStepComplete(2)">ضع علامة إكمال لهذه الخطوة</button>
+        </div>
+
+        <!-- Step 3: Board Formation -->
+        <div class="content-section" id="step3">
+            <h2>المرحلة الثالثة: تشكيل المجلسين المزدوجين</h2>
+            
+            <h3>نموذج الحوكمة ذو المستويين</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>مجلس الإدارة (مطلوب)</th>
+                        <th>المجلس الاستشاري (موصى به)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>سلطة حوكمة قانونية</td>
+                        <td>دور استشاري فقط</td>
+                    </tr>
+                    <tr>
+                        <td>مسؤولية ائتمانية</td>
+                        <td>لا توجد مسؤولية قانونية</td>
+                    </tr>
+                    <tr>
+                        <td>يدير العمليات والمالية</td>
+                        <td>يقدم الحكمة والاتصالات</td>
+                    </tr>
+                    <tr>
+                        <td>٧-٩ أعضاء، منتخبين</td>
+                        <td>٧-١١ أعضاء، معينين</td>
+                    </tr>
+                    <tr>
+                        <td>مدة ولاية سنتين، حدود فترات</td>
+                        <td>مدة ولاية سنتين، قابلة للتجديد</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>مجلس الإدارة - التركيبة المقترحة</h3>
+            <div class="resource-card">
+                <h4>مناصب أساسية للمجتمع السوداني:</h4>
+                <ul class="checklist">
+                    <li><strong>الرئيس:</strong> قائد محترم، يفضل أن يكون ثنائي اللغة</li>
+                    <li><strong>نائب الرئيس:</strong> اتصال مع جامعة ميشيغان الحكومية إذا أمكن</li>
+                    <li><strong>الأمين:</strong> ثنائي اللغة، منظم</li>
+                    <li><strong>أمين الصندوق:</strong> معرفة مالية مطلوبة</li>
+                    <li><strong>مدير الثقافة:</strong> كبير السن أو حافظ التقاليد</li>
+                    <li><strong>مدير الشباب:</strong> عمر ١٨-٣٥ سنة</li>
+                    <li><strong>ممثل النساء:</strong> يعالج احتياجات النساء الخاصة</li>
+                    <li><strong>مدافع عن القادمين الجدد:</strong> لاجئ مستقر حديثاً</li>
+                </ul>
+            </div>
+            
+            <h3>عملية تشكيل المجلس الاستشاري</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">الشهر ٣</div>
+                    <h3>استراتيجية التوظيف</h3>
+                    <p><strong>استهداف ٣ فئات:</strong></p>
+                    <ul class="checklist">
+                        <li><strong>كبار السن الثقافيون (٣-٢):</strong> شيوخ، مؤسسو المجتمع، حكماء</li>
+                        <li><strong>جسور مؤسسية (٤-٣):</strong> أستاذ جامعي، مسؤول مدينة، قائد بين الأديان</li>
+                        <li><strong>خبراء مهنيون (٤-٢):</strong> محام، طبيب، مربي، صاحب عمل</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-item">
+                    <h3>بروتوكول التوظيف الثقافي</h3>
+                    <ul class="checklist">
+                        <li><strong>لكبار السن:</strong> زيارة شخصية مع هدية صغيرة (تمور، شاي)</li>
+                        <li>استخدام العلاقات القائمة والصلات العائلية</li>
+                        <li>صياغة الطلب: "نحتاج حكمتك لتوجيه مجتمعنا"</li>
+                        <li>التأكيد على الالتزام الزمني المتواضع: ٤ اجتماعات سنوياً</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-item">
+                    <h3>عناصر ميثاق المجلس الاستشاري</h3>
+                    <div class="cost-box">
+                        <strong>نموذج للتحميل متاح أدناه</strong><br>
+                        يتضمن: الغرض، التركيبة، المسؤوليات، جدول الاجتماعات، البروتوكولات الثقافية
+                    </div>
+                </div>
+            </div>
+            
+            <button class="btn" onclick="markStepComplete(3)">ضع علامة إكمال لهذه الخطوة</button>
+        </div>
+
+        <!-- Step 4: Bylaws & Structure -->
+        <div class="content-section" id="step4">
+            <h2>المرحلة الرابعة: اللائحة الداخلية والهيكل التنظيمي</h2>
+            
+            <div class="bylaws-section">
+                <div class="bylaws-header">
+                    <h3>بسم الله الرحمن الرحيم</h3>
+                    <h4>اللائحة الداخلية للجالية السودانية في مدينة لانسينغ الكبرى (2026-2027)</h4>
+                </div>
+                
+                <div class="bylaws-content">
+                    <h4>محتويات اللائحة الداخلية:</h4>
+                    <ol>
+                        <li>الانضباط والمساءلة</li>
+                        <li>الاجتماعات</li>
+                        <li>بنود الصرف والنسب</li>
+                        <li>البرامج السنوية</li>
+                        <li>الخطة السنوية</li>
+                        <li>المتابعة والتقييم</li>
+                    </ol>
+
+                    <h4>١/ الاجتماعات</h4>
+                    <ol>
+                        <li>تعقد اللجنة التنفيذية اجتماعًا دوريًا مرتين كل شهر على الأقل.</li>
+                        <li>يكون الاجتماع قانونيًا بحضور الأغلبية البسيطة للأعضاء.</li>
+                        <li>تصدر القرارات بالأغلبية، وعند التساوي يرجح جانب الرئيس.</li>
+                        <li>يجوز عقد اجتماعات طارئة عند الضرورة.</li>
+                    </ol>
+
+                    <h4>٢/ الانضباط والمساءلة</h4>
+                    <ol>
+                        <li>يلتزم أعضاء اللجنة بحضور الاجتماعات والمشاركة الفاعلة.</li>
+                        <li>في حال الغياب المتكرر دون عذر مقبول، يحق للجنة اتخاذ الإجراءات المناسبة.</li>
+                        <li>يلتزم جميع الأعضاء بميثاق السلوك والأخلاقيات.</li>
+                    </ol>
+
+                    <h4>٣/ بنود الصرف والنسب</h4>
+                    <ol>
+                        <li>في حالة الوفاة</li>
+                        <li>المناسبات العامة (إيجار قاعات و.....الخ)</li>
+                        <li>مستلزمات إدارية</li>
+                        <li>مساعدات اجتماعية</li>
+                    </ol>
+
+                    <h4>٤/ البرامج السنوية</h4>
+                    <ol>
+                        <li>عيد الاستقلال</li>
+                        <li>إفطار رمضان</li>
+                        <li>عيد الأضحى</li>
+                        <li>تنظيم يوم اجتماعي للجالية (رحلة صيفية ويكون فيه برامج مثل تكريم الخريجين)</li>
+                        <li>عيد كرسمس</li>
+                    </ol>
+
+                    <h4>٥/ الخطة السنوية</h4>
+                    <p>يمكن تقسيم الخطة السنوية إلى ثلاث فترات:</p>
+                    <ol>
+                        <li><strong>خطة قصيرة المدى (من يناير - مارس):</strong>
+                            <ul>
+                                <li>كتابة الدستور</li>
+                                <li>كتابة اللائحة الداخلية</li>
+                                <li>جمع بيانات المساهمين من أبناء الجالية</li>
+                                <li>تسجيل الجالية</li>
+                                <li>الحصول على EIN Number</li>
+                                <li>فتح حساب بنكي للجالية</li>
+                                <li>إيجار محل للجالية</li>
+                                <li>وضع نظام لجمع المساهمات الشهرية أو السنوية</li>
+                            </ul>
+                        </li>
+                        <li><strong>خطة متوسطة المدى (أبريل - أغسطس):</strong>
+                            <ul>
+                                <li>إيجار مقر ثابت للجالية</li>
+                                <li>توفير الأدوات اللازمة للمقر (كراسي + طاولات + فرشات...الخ)</li>
+                                <li>إعداد تقرير مالي نصف سنوي</li>
+                            </ul>
+                        </li>
+                        <li><strong>خطة طويلة المدى (١٢ شهر):</strong>
+                            <ul>
+                                <li>[يتم تطويرها بناءً على تقييم احتياجات المجتمع]</li>
+                            </ul>
+                        </li>
+                    </ol>
+
+                    <h4>٦/ المتابعة والتقييم</h4>
+                    <ul>
+                        <li>تقرير كل ثلاثة أشهر</li>
+                        <li>مراجعة الأهداف</li>
+                        <li>تصحيح المسار</li>
+                        <li>عرض النتائج للأعضاء</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>كيفية دمج هذه اللائحة مع المتطلبات القانونية الأمريكية</h3>
+            <div class="resource-card">
+                <h4>نقاط التكامل الرئيسية:</h4>
+                <ul class="checklist">
+                    <li><strong>قانوني مقابل ثقافي:</strong> "اللجنة التنفيذية" = مجلس الإدارة قانونياً</li>
+                    <li><strong>الشفافية المالية:</strong> بنود الصرف يجب أن تتوافق مع متطلبات المنفعة العامة لـ IRS</li>
+                    <li><strong>متطلبات الاجتماعات:</strong> مرتين شهرياً ممتاز للمشاركة المجتمعية</li>
+                    <li><strong>البرامج السنوية:</strong> مثالية لطلب ٥٠١(ج)(٣) - تظهر الأنشطة الثقافية والتعليمية</li>
+                    <li><strong>نظام التقييم:</strong> التقارير الربع سنوية تتوافق مع حوكمة المنظمات غير الربحية الجيدة</li>
+                </ul>
+            </div>
+
+            <div class="download-section">
+                <h3>تحميل نموذج اللائحة الداخلية الكامل</h3>
+                <button class="btn" onclick="downloadTemplate('complete_bylaws')">تحميل نموذج اللائحة</button>
+                <button class="btn btn-secondary" onclick="downloadTemplate('meeting_minutes')">نموذج محضر الاجتماع</button>
+                <button class="btn" onclick="downloadTemplate('code_of_conduct')">نموذج ميثاق السلوك</button>
+            </div>
+            
+            <button class="btn" onclick="markStepComplete(4)">ضع علامة إكمال لهذه الخطوة</button>
+        </div>
+
+        <!-- Step 5: IRS 501(c)(3) -->
+        <div class="content-section" id="step5">
+            <h2>المرحلة الخامسة: الإعفاء الضريبي الفيدرالي</h2>
+            
+            <h3>اختيار مسار التقديم</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>النموذج ١٠٢٣-EZ</th>
+                        <th>النموذج ١٠٢٣ (طويل)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>الأهلية:</strong> إيرادات متوقعة < ٥٠,٠٠٠ دولار لـ ٣ سنوات</td>
+                        <td><strong>الأهلية:</strong> أي حجم للمنظمة</td>
+                    </tr>
+                    <tr>
+                        <td><strong>الرسوم:</strong> ٢٧٥ دولار</td>
+                        <td><strong>الرسوم:</strong> ٦٠٠ دولار</td>
+                    </tr>
+                    <tr>
+                        <td><strong>المعالجة:</strong> ٢-٤ أسابيع</td>
+                        <td><strong>المعالجة:</strong> ٣-١٢ شهراً</td>
+                    </tr>
+                    <tr>
+                        <td><strong>الطول:</strong> ٣ صفحات</td>
+                        <td><strong>الطول:</strong> ٢٨ صفحة + ملاحق</td>
+                    </tr>
+                    <tr>
+                        <td><strong>موصى به لـ:</strong> معظم مشاريع المجتمع الناشئة</td>
+                        <td><strong>مطلوب إذا:</strong> ميزانية كبيرة أو أنشطة معقدة</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>استخدام برامجكم السنوية في التقديم</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>البرامج الثقافية والتعليمية (مؤهلة لـ ٥٠١(ج)(٣))</h3>
+                    <ul class="checklist">
+                        <li><strong>احتفال عيد الاستقلال:</strong> تعليم ثقافي للمجتمع الأوسع</li>
+                        <li><strong>إفطار رمضان:</strong> التفاهم بين الأديان والتبادل الثقافي</li>
+                        <li><strong>اليوم الاجتماعي للمجتمع:</strong> التماسك الاجتماعي وتنمية الشباب</li>
+                        <li><strong>تكريم الخريجين:</strong> احتفال بالإنجاز التعليمي</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-item">
+                    <h3>البرامج الخيرية (مؤهلة لـ ٥٠١(ج)(٣))</h3>
+                    <ul class="checklist">
+                        <li><strong>المساعدات الاجتماعية:</strong> مساعدة مباشرة لأفراد المجتمع المحتاجين</li>
+                        <li><strong>دعم الوفاة:</strong> إغاثة خيرية أثناء الفاجعة</li>
+                        <li><strong>دعم القادمين الجدد:</strong> المساعدة في الاندماج</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="cost-box">
+                <strong>هام:</strong> قدم جميع البرامج على أنها تقدم <strong>منفعة عامة</strong>.<br>
+                مثال: "إفطار رمضان مفتوح لجميع أفراد المجتمع لتعزيز التفاهم بين الأديان."
+            </div>
+            
+            <button class="btn" onclick="markStepComplete(5)">ضع علامة إكمال لهذه الخطوة</button>
+        </div>
+
+        <!-- Step 6: State Compliance -->
+        <div class="content-section" id="step6">
+            <h2>المرحلة السادسة: الامتثال لولاية ميشيغان</h2>
+            
+            <h3>التسجيلات الحكومية المطلوبة</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">بعد موافقة IRS</div>
+                    <h3>١. الإعفاء الضريبي في ميشيغان</h3>
+                    <ul class="checklist">
+                        <li><strong>النموذج ٣٣٧٢:</strong> طلب الإعفاء الضريبي في ميشيغان</li>
+                        <li>تقديم إلى وزارة الخزانة في ميشيغان</li>
+                        <li>يعفي من ضريبة الدخل في ميشيغان</li>
+                        <li>إعفاء ضريبة المبيعات/الاستخدام للمشتريات غير الربحية</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-item">
+                    <h3>٢. التسجيل الخيري</h3>
+                    <ul class="checklist">
+                        <li><strong>النموذج CSN-١٠٠:</strong> التسجيل الأولي للمنظمة الخيرية</li>
+                        <li>مطلوب قبل جمع التبرعات</li>
+                        <li>تقديم إلى قسم الأوقاف الخيرية في النائب العام لميشيغان</li>
+                        <li><strong>تقديم سنوي:</strong> النموذج CSN-٥٠ (مستحق بعد ٦ أشهر من نهاية السنة المالية)</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-item">
+                    <h3>٣. متطلبات لانسينغ المحلية</h3>
+                    <ul class="checklist">
+                        <li>التحقق من كاتب مدينة لانسينغ لمتطلبات ترخيص الأعمال</li>
+                        <li>تأكد من توافق مكان الاجتماع مع لوائح التقسيم</li>
+                        <li>تقدم بطلب تصاريح أحداث خاصة للمهرجانات</li>
+                        <li>فكر في التأمين: المسؤولية العامة، تغطية المديرين والمسؤولين</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>تنفيذ نظام المتابعة والتقييم الخاص بكم</h3>
+            <div class="resource-card">
+                <h4>جدول التقارير الربع سنوية:</h4>
+                <ul class="checklist">
+                    <li><strong>٣١ مارس:</strong> تقرير الربع الأول - مراجعة تقدم الخطة قصيرة المدى</li>
+                    <li><strong>٣٠ يونيو:</strong> تقرير الربع الثاني - المراجعة المالية منتصف السنة</li>
+                    <li><strong>٣٠ سبتمبر:</strong> تقرير الربع الثالث - تقييم البرامج قبل العطلات</li>
+                    <li><strong>٣١ ديسمبر:</strong> تقرير الربع الرابع - المراجعة السنوية والتخطيط</li>
+                    <li><strong>سنوياً:</strong> تقديم تقرير شامل للعضوية</li>
+                </ul>
+            </div>
+            
+            <button class="btn" onclick="markStepComplete(6)">ضع علامة إكمال لهذه الخطوة</button>
+        </div>
+
+        <!-- Step 7: Launch -->
+        <div class="content-section" id="step7">
+            <h2>المرحلة السابعة: الإطلاق التشغيلي</h2>
+            
+            <h3>تنفيذ خطتكم السنوية</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">قصيرة المدى (يناير-مارس)</div>
+                    <h3>مرحلة التأسيس</h3>
+                    <ul class="checklist">
+                        <li>إكمال التسجيل القانوني (LARA، EIN)</li>
+                        <li>فتح حساب بنكي مع ٣ موقعين مطلوبين</li>
+                        <li>إنشاء نظام جمع المساهمات</li>
+                        <li>إيجار مكان مؤقت للاجتماعات</li>
+                        <li>بدء جمع بيانات المجتمع</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">متوسطة المدى (أبريل-أغسطس)</div>
+                    <h3>مرحلة البناء</h3>
+                    <ul class="checklist">
+                        <li>تأمين مقر دائم</li>
+                        <li>تأثيثه بمعدات أساسية</li>
+                        <li>تقديم طلب ٥٠١(ج)(٣) لـ IRS</li>
+                        <li>استضافة أول حدث رئيسي (إفطار رمضان أو عيد الاستقلال)</li>
+                        <li>إعداد أول تقرير مالي</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">طويلة المدى (السنة الأولى)</div>
+                    <h3>مرحلة النمو</h3>
+                    <ul class="checklist">
+                        <li>تنفيذ جميع البرامج السنوية الخمسة</li>
+                        <li>إنشاء لجان الشباب والنساء</li>
+                        <li>تطوير شراكة مع جامعة ميشيغان الحكومية</li>
+                        <li>إنشاء صندوق دعم طارئ</li>
+                        <li>بناء قاعدة تمويل مستدامة</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>تنفيذ برامجكم السنوية</h3>
+            <div class="resource-card">
+                <h4>جدول تنفيذ البرامج:</h4>
+                <ul class="checklist">
+                    <li><strong>يناير:</strong> إنهاء واعتماد الدستور</li>
+                    <li><strong>فبراير:</strong> أول اجتماع مجتمعي لاعتماد اللائحة الداخلية</li>
+                    <li><strong>مارس-أبريل:</strong> تخطيط وتنفيذ إفطار رمضان</li>
+                    <li><strong>يوليو:</strong> احتفال عيد الاستقلال</li>
+                    <li><strong>سبتمبر:</strong> اليوم الاجتماعي الصيفي للمجتمع</li>
+                    <li><strong>ديسمبر:</strong> احتفال الكريسماس ومراجعة نهاية العام</li>
+                </ul>
+            </div>
+            
+            <h3>توزيع الميزانية وفق بنود الصرف</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>فئة الصرف</th>
+                        <th>النسبة الموصى بها من الميزانية</th>
+                        <th>توزيع عيني (ميزانية ١٠,٠٠٠ دولار)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>مستلزمات إدارية</td>
+                        <td>١٥٪</td>
+                        <td>١,٥٠٠ دولار</td>
+                    </tr>
+                    <tr>
+                        <td>المناسبات العامة (إيجار قاعات، فعاليات)</td>
+                        <td>٤٠٪</td>
+                        <td>٤,٠٠٠ دولار</td>
+                    </tr>
+                    <tr>
+                        <td>مساعدات اجتماعية</td>
+                        <td>٢٥٪</td>
+                        <td>٢,٥٠٠ دولار</td>
+                    </tr>
+                    <tr>
+                        <td>صندوق دعم الوفاة</td>
+                        <td>١٠٪</td>
+                        <td>١,٠٠٠ دولار</td>
+                    </tr>
+                    <tr>
+                        <td>طوارئ/احتياطي</td>
+                        <td>١٠٪</td>
+                        <td>١,٠٠٠ دولار</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="arabic-note">
+                <strong>نصيحة عملية:</strong> ابدأ بتنفيذ الخطة قصيرة المدى أولاً (٣ أشهر)، ثم قيم النتائج قبل الانتقال إلى المرحلة المتوسطة. هذا يضمن تصحيح المسار مبكراً.
+            </div>
+            
+            <div class="download-section">
+                <h3>حزمة الإطلاق الكاملة</h3>
+                <button class="btn" onclick="downloadTemplate('annual_plan_calendar')">تقويم الخطة السنوية</button>
+                <button class="btn btn-secondary" onclick="downloadTemplate('budget_spreadsheet')">جدول بيانات الميزانية</button>
+                <button class="btn" onclick="downloadTemplate('program_planning')">نماذج تخطيط البرامج</button>
+            </div>
+            
+            <button class="btn" onclick="markStepComplete(7)">ضع علامة إكمال لهذه الخطوة</button>
+        </div>
+
+        <footer>
+            <h3>هل تحتاج مساعدة؟ موارد لانسينغ</h3>
+            <p><strong>مركز تنمية الأعمال الصغيرة في ميشيغان:</strong> استشارات غير ربحية مجانية</p>
+            <p><strong>يونايتد واي لمنطقة العاصمة:</strong> ٢١١ للموارد المجتمعية</p>
+            <p><strong>التعلم المجتمعي في جامعة ميشيغان الحكومية:</strong> متطوعون طلابيون وشراكات</p>
+            <p><strong>خدمات قانونية مجانية:</strong> عيادات كلية القانون بجامعة ميشيغان الحكومية</p>
+            <p style="margin-top: 1rem;">© ٢٠٢٤ دليل المنظمة غير الربحية للمجتمع السوداني | محدث لمدينة لانسينغ، ميشيغان</p>
+        </footer>
+    </div>
+
+    <script>
+        let currentStep = 1;
+        const totalSteps = 7;
+        
+        // Initialize progress
+        updateProgress();
+        
+        // Navigation buttons
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            if (currentStep < totalSteps) {
+                currentStep++;
+                updateProgress();
+            }
+        });
+        
+        document.getElementById('prevBtn').addEventListener('click', () => {
+            if (currentStep > 1) {
+                currentStep--;
+                updateProgress();
+            }
+        });
+        
+        // Step click navigation
+        document.querySelectorAll('.progress-step').forEach(step => {
+            step.addEventListener('click', () => {
+                currentStep = parseInt(step.dataset.step);
+                updateProgress();
+            });
+        });
+        
+        function updateProgress() {
+            // Update progress steps
+            document.querySelectorAll('.progress-step').forEach(step => {
+                const stepNum = parseInt(step.dataset.step);
+                step.classList.remove('active', 'completed');
+                
+                if (stepNum === currentStep) {
+                    step.classList.add('active');
+                } else if (stepNum < currentStep) {
+                    step.classList.add('completed');
+                }
+            });
+            
+            // Update content sections
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.remove('active');
+                if (section.id === `step${currentStep}`) {
+                    section.classList.add('active');
+                }
+            });
+            
+            // Update step indicator
+            const stepTitles = [
+                'الخطوة ١ من ٧: مرحلة التخطيط',
+                'الخطوة ٢ من ٧: التأسيس القانوني',
+                'الخطوة ٣ من ٧: تشكيل المجالس',
+                'الخطوة ٤ من ٧: اللائحة الداخلية',
+                'الخطوة ٥ من ٧: طلب الإعفاء الضريبي',
+                'الخطوة ٦ من ٧: الامتثال الحكومي',
+                'الخطوة ٧ من ٧: الإطلاق التشغيلي'
+            ];
+            document.getElementById('stepIndicator').textContent = stepTitles[currentStep - 1];
+            
+            // Update button states
+            document.getElementById('prevBtn').disabled = currentStep === 1;
+            document.getElementById('nextBtn').disabled = currentStep === totalSteps;
+        }
+        
+        function markStepComplete(step) {
+            const stepElement = document.querySelector(`.progress-step[data-step="${step}"]`);
+            stepElement.classList.add('completed');
+            alert(`تم وضع علامة إكمال للخطوة ${step}!`);
+            
+            // Auto-advance if not last step
+            if (step < totalSteps) {
+                currentStep = step + 1;
+                updateProgress();
+            }
+        }
+        
+        function downloadTemplate(templateName) {
+            const templates = {
+                'complete_bylaws': 'اللائحة_الداخلية_الكاملة.docx',
+                'meeting_minutes': 'نموذج_محضر_الاجتماع.docx',
+                'code_of_conduct': 'ميثاق_السلوك_والأخلاقيات.docx',
+                'annual_plan_calendar': 'تقويم_الخطة_السنوية.xlsx',
+                'budget_spreadsheet': 'جدول_بيانات_الميزانية.xlsx',
+                'program_planning': 'نماذج_تخطيط_البرامج.zip'
+            };
+            
+            alert(`جاري تحميل ${templates[templateName]} - هذا عرض توضيحي. في التطبيق الحقيقي، سيتم تحميل القالب الفعلي.`);
+        }
+        
+        // Auto-save progress to localStorage
+        setInterval(() => {
+            localStorage.setItem('nonprofitGuideProgress', currentStep.toString());
+        }, 5000);
+        
+        // Load saved progress on page load
+        window.addEventListener('load', () => {
+            const savedStep = localStorage.getItem('nonprofitGuideProgress');
+            if (savedStep) {
+                currentStep = parseInt(savedStep);
+                updateProgress();
+            }
+        });
+    </script>
+</body>
+</html>
