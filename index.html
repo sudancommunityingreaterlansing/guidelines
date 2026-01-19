@@ -1,10 +1,696 @@
-<html><body>
-<center>
-<h1>Guidlines and Notes</h1><br>
-<h2>for the Board</h2><hr>
-Here are some notes or guidelines collected that we can edit and add on<br>
-إليكم بعض الملاحظات أو الإرشادات التي جمعناها والتي يمكننا تعديلها وإضافة المزيد إليها<br>
-<a href="./arabic.html">Arabic</a><br>
-<a href="./english.html">English</a><br>
-<hr><b>Thank you</b></br>Jan 2026
-</body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudanese Community Board Guidelines</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #006400; /* Sudanese green */
+            --secondary: #DAA520; /* Gold */
+            --accent: #8B0000; /* Dark red */
+            --light: #f8f9fa;
+            --dark: #333;
+            --gray: #6c757d;
+            --shadow: 0 4px 20px rgba(0, 100, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, #228B22 100%);
+            color: white;
+            padding: 1.5rem 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .logo-container {
+            margin-bottom: 1rem;
+            position: relative;
+        }
+        
+        .logo {
+            height: 100px;
+            width: auto;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+            transition: transform 0.3s ease;
+        }
+        
+        .logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .header-title {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .header-subtitle {
+            font-size: 1.4rem;
+            font-weight: 300;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .flag-decoration {
+            display: inline-block;
+            width: 40px;
+            height: 26px;
+            background: linear-gradient(to bottom, red 33%, white 33%, white 66%, black 66%, black 100%);
+            margin: 0 15px;
+            border-radius: 3px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            vertical-align: middle;
+        }
+        
+        /* Main Content */
+        .main-content {
+            background: white;
+            border-radius: 15px;
+            padding: 3rem;
+            margin: 2rem auto;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+            max-width: 900px;
+        }
+        
+        .main-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+        }
+        
+        .intro-text {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 1.2rem;
+            color: var(--gray);
+            line-height: 1.8;
+        }
+        
+        .intro-text-arabic {
+            direction: rtl;
+            font-family: 'Segoe UI', 'Arial', sans-serif;
+            font-size: 1.3rem;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px dashed #eee;
+            color: #444;
+        }
+        
+        /* Language Cards */
+        .language-cards {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin: 3rem 0;
+        }
+        
+        .language-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2.5rem;
+            width: 320px;
+            text-align: center;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 1px solid #eee;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .language-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 25px rgba(0, 100, 0, 0.15);
+            border-color: var(--primary);
+        }
+        
+        .language-card.arabic {
+            border-top: 5px solid var(--primary);
+        }
+        
+        .language-card.english {
+            border-top: 5px solid var(--accent);
+        }
+        
+        .language-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+        
+        .language-card.english .language-icon {
+            color: var(--accent);
+        }
+        
+        .language-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        
+        .language-description {
+            color: var(--gray);
+            margin-bottom: 2rem;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        
+        .btn-language {
+            display: inline-block;
+            padding: 12px 28px;
+            background: linear-gradient(135deg, var(--primary) 0%, #228B22 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 100, 0, 0.2);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-language:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 100, 0, 0.3);
+            background: linear-gradient(135deg, #004d00 0%, #1a7a1a 100%);
+        }
+        
+        .btn-language.english-btn {
+            background: linear-gradient(135deg, var(--accent) 0%, #a80000 100%);
+        }
+        
+        .btn-language.english-btn:hover {
+            background: linear-gradient(135deg, #6a0000 0%, #8a0000 100%);
+        }
+        
+        /* Features Section */
+        .features {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin: 3rem 0;
+        }
+        
+        .feature {
+            flex: 1;
+            min-width: 250px;
+            background: #f8f9fa;
+            padding: 1.8rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--secondary);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        .feature-icon {
+            font-size: 2.2rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+        
+        .feature-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            color: var(--dark);
+        }
+        
+        .feature-description {
+            color: var(--gray);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 2.5rem 0;
+            margin-top: 4rem;
+            text-align: center;
+        }
+        
+        .thank-you {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+            font-weight: 600;
+        }
+        
+        .date {
+            font-size: 1.1rem;
+            opacity: 0.8;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1rem;
+        }
+        
+        .contact-icon {
+            color: var(--secondary);
+        }
+        
+        /* Decorative Elements */
+        .floating-element {
+            position: absolute;
+            opacity: 0.1;
+            z-index: 1;
+        }
+        
+        .floating-1 {
+            top: 20%;
+            left: 5%;
+            font-size: 8rem;
+            color: var(--primary);
+        }
+        
+        .floating-2 {
+            bottom: 10%;
+            right: 5%;
+            font-size: 8rem;
+            color: var(--accent);
+            transform: rotate(180deg);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-title {
+                font-size: 2.2rem;
+            }
+            
+            .header-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .main-content {
+                padding: 2rem;
+                margin: 1.5rem;
+            }
+            
+            .language-cards {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .language-card {
+                width: 100%;
+                max-width: 400px;
+            }
+            
+            .features {
+                flex-direction: column;
+            }
+            
+            .floating-element {
+                display: none;
+            }
+        }
+        
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-in {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        
+        .delay-1 {
+            animation-delay: 0.2s;
+        }
+        
+        .delay-2 {
+            animation-delay: 0.4s;
+        }
+        
+        .delay-3 {
+            animation-delay: 0.6s;
+        }
+        
+        /* Stats Counter */
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            background: linear-gradient(135deg, var(--primary) 0%, #1a7a1a 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 3rem 0;
+            text-align: center;
+        }
+        
+        .stat-item {
+            flex: 1;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        
+        /* Download Section */
+        .download-section {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+            border: 2px dashed #ddd;
+        }
+        
+        .download-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+        }
+        
+        .download-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .btn-download {
+            padding: 10px 20px;
+            background: white;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-download:hover {
+            background: var(--primary);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo-container">
+                <img src="./logo1.png" alt="Sudanese Community Logo" class="logo">
+            </div>
+            <h1 class="header-title">
+                Board Guidelines <span class="flag-decoration"></span> إرشادات المجلس
+            </h1>
+            <p class="header-subtitle">
+                Comprehensive Resources for Effective Community Leadership and Governance
+            </p>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <div class="container">
+        <div class="main-content animate-in">
+            <!-- Floating Decorative Elements -->
+            <div class="floating-element floating-1">
+                <i class="fas fa-users"></i>
+            </div>
+            <div class="floating-element floating-2">
+                <i class="fas fa-hands-helping"></i>
+            </div>
+            
+            <p class="intro-text">
+                Welcome to the Sudanese Community Board Resource Center. This platform provides comprehensive guidelines, 
+                bylaws, and operational frameworks to support our community leadership in Lansing, Michigan. 
+                These resources are designed to help board members navigate governance responsibilities while 
+                honoring our cultural heritage and traditions.
+            </p>
+            
+            <p class="intro-text-arabic animate-in delay-1">
+                مرحباً بكم في مركز موارد مجلس الجالية السودانية. توفر هذه المنصة إرشادات شاملة، لوائح داخلية، وأطر عمل تشغيلية 
+                لدعم قيادة مجتمعنا في لانسينغ، ميشيغان. تم تصميم هذه الموارد لمساعدة أعضاء المجلس في تنفيذ مسؤوليات الحوكمة 
+                مع الحفاظ على تراثنا الثقافي وتقاليدنا.
+            </p>
+            
+            <!-- Stats Counter -->
+            <div class="stats animate-in delay-2">
+                <div class="stat-item">
+                    <div class="stat-number">150+</div>
+                    <div class="stat-label">Community Members</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">7</div>
+                    <div class="stat-label">Board Positions</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">5</div>
+                    <div class="stat-label">Annual Programs</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">2026</div>
+                    <div class="stat-label">Current Term</div>
+                </div>
+            </div>
+            
+            <!-- Language Selection Cards -->
+            <h2 style="text-align: center; margin: 3rem 0 1.5rem; color: var(--primary);">Select Language / اختر اللغة</h2>
+            
+            <div class="language-cards">
+                <div class="language-card arabic animate-in delay-1">
+                    <div class="language-icon">
+                        <i class="fas fa-book-quran"></i>
+                    </div>
+                    <h3 class="language-title">العربية</h3>
+                    <p class="language-description">
+                        الوصول إلى الإرشادات الكاملة باللغة العربية مع مراعاة السياق الثقافي والتراث السوداني.
+                    </p>
+                    <a href="./arabic.html" class="btn-language">
+                        <i class="fas fa-external-link-alt"></i> افتح الإرشادات
+                    </a>
+                </div>
+                
+                <div class="language-card english animate-in delay-2">
+                    <div class="language-icon">
+                        <i class="fas fa-landmark"></i>
+                    </div>
+                    <h3 class="language-title">English</h3>
+                    <p class="language-description">
+                        Access complete guidelines in English with legal compliance and governance best practices.
+                    </p>
+                    <a href="./english.html" class="btn-language english-btn">
+                        <i class="fas fa-external-link-alt"></i> Open Guidelines
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Features -->
+            <div class="features animate-in delay-3">
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <h3 class="feature-title">Governance Structure</h3>
+                    <p class="feature-description">
+                        Clear roles and responsibilities for Board members, committees, and community leadership.
+                    </p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3 class="feature-title">Annual Planning</h3>
+                    <p class="feature-description">
+                        Complete annual program calendar with cultural events, community activities, and timelines.
+                    </p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-file-contract"></i>
+                    </div>
+                    <h3 class="feature-title">Legal Compliance</h3>
+                    <p class="feature-description">
+                        Michigan nonprofit requirements, IRS 501(c)(3) guidelines, and regulatory compliance.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Download Section -->
+            <div class="download-section animate-in delay-2">
+                <h3 class="download-title">Download Resources / تحميل الموارد</h3>
+                <div class="download-buttons">
+                    <a href="#" class="btn-download" onclick="downloadResource('bylaws')">
+                        <i class="fas fa-download"></i> Bylaws Template
+                    </a>
+                    <a href="#" class="btn-download" onclick="downloadResource('meeting_minutes')">
+                        <i class="fas fa-download"></i> Meeting Minutes
+                    </a>
+                    <a href="#" class="btn-download" onclick="downloadResource('annual_plan')">
+                        <i class="fas fa-download"></i> Annual Plan
+                    </a>
+                    <a href="#" class="btn-download" onclick="downloadResource('all_resources')">
+                        <i class="fas fa-file-archive"></i> All Resources
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="thank-you">Thank You for Your Leadership / شكراً لقيادتكم</div>
+            <div class="date">January 2026 - جمادى الأولى ١٤٤٧</div>
+            <p>Sudanese Community Association of Greater Lansing, Michigan</p>
+            <p>جمعية الجالية السودانية في لانسينغ الكبرى، ميشيغان</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt contact-icon"></i>
+                    <span>Lansing, Michigan, USA</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope contact-icon"></i>
+                    <span>board@sudanese-lansing.org</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone contact-icon"></i>
+                    <span>+1 (517) SUD-ANSE</span>
+                </div>
+            </div>
+            
+            <div style="margin-top: 2rem; font-size: 0.9rem; opacity: 0.7;">
+                <p>© 2026 Sudanese Community Board Resources. All rights reserved.</p>
+                <p>This resource is regularly updated to reflect current governance best practices.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Download resource function
+        function downloadResource(type) {
+            const resources = {
+                'bylaws': 'Sudanese_Community_Bylaws_Template.pdf',
+                'meeting_minutes': 'Meeting_Minutes_Template.docx',
+                'annual_plan': 'Annual_Plan_2026_2027.pdf',
+                'all_resources': 'Board_Resources_Package.zip'
+            };
+            
+            alert(`Downloading ${resources[type]} - This is a demo. In a real application, this would download the actual file.`);
+            
+            // In a real implementation, this would trigger a file download
+            // window.location.href = `/downloads/${resources[type]}`;
+            
+            return false;
+        }
+        
+        // Add animation on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedElements = document.querySelectorAll('.animate-in');
+            
+            // Initially hide elements
+            animatedElements.forEach(el => {
+                el.style.opacity = '0';
+            });
+            
+            // Create intersection observer for scroll animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationPlayState = 'running';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            // Observe each animated element
+            animatedElements.forEach(el => {
+                observer.observe(el);
+            });
+            
+            // Stats counter animation
+            const statNumbers = document.querySelectorAll('.stat-number');
+            statNumbers.forEach(stat => {
+                const target = parseInt(stat.textContent);
+                let current = 0;
+                const increment = target / 50;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        stat.textContent = target + (stat.textContent.includes('+') ? '+' : '');
+                        clearInterval(timer);
+                    } else {
+                        stat.textContent = Math.floor(current);
+                    }
+                }, 30);
+            });
+        });
+    </script>
+</body>
+</html>
