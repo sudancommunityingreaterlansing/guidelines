@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudanese Community Nonprofit Guide - Lansing, MI</title>
+    <style>
+        :root {
+            --primary: #006400;
+            --secondary: #DAA520;
+            --accent: #8B0000;
+            --light: #f8f9fa;
+            --dark: #333;
+            --gray: #6c757d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, #228B22 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .flag {
+            display: inline-block;
+            width: 30px;
+            height: 20px;
+            background: linear-gradient(to bottom, red 33%, white 33%, white 66%, black 66%, black 100%);
+            margin: 0 10px;
+            vertical-align: middle;
+            border: 1px solid #ccc;
+        }
+        
+        .progress-container {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .progress-bar {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin: 2rem 0;
+        }
+        
+        .progress-bar::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--light);
+            transform: translateY(-50%);
+            z-index: 1;
+        }
+        
+        .progress-step {
+            position: relative;
+            z-index: 2;
+            background: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            border: 3px solid var(--light);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .progress-step.active {
+            border-color: var(--primary);
+            background: var(--primary);
+            color: white;
+        }
+        
+        .progress-step.completed {
+            border-color: var(--secondary);
+            background: var(--secondary);
+            color: white;
+        }
+        
+        .step-label {
+            position: absolute;
+            top: 45px;
+            white-space: nowrap;
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+        
+        .content-section {
+            display: none;
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .content-section.active {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        h2 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--secondary);
+        }
+        
+        h3 {
+            color: var(--accent);
+            margin: 1.5rem 0 1rem 0;
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+            margin: 2rem 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--secondary);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+            padding-left: 20px;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -33px;
+            top: 5px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: var(--primary);
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px var(--secondary);
+        }
+        
+        .timeline-date {
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .checklist {
+            list-style: none;
+            margin: 1rem 0;
+        }
+        
+        .checklist li {
+            padding: 0.5rem 0 0.5rem 2rem;
+            position: relative;
+        }
+        
+        .checklist li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+        
+        .comparison-table th, .comparison-table td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        
+        .comparison-table th {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .cost-box {
+            background: #f8f9fa;
+            border-left: 4px solid var(--secondary);
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            margin: 0.5rem;
+            transition: background 0.3s;
+        }
+        
+        .btn:hover {
+            background: #004d00;
+        }
+        
+        .btn-secondary {
+            background: var(--secondary);
+        }
+        
+        .btn-secondary:hover {
+            background: #b8860b;
+        }
+        
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+        }
+        
+        .download-section {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .resource-card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-left: 4px solid var(--primary);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 2rem;
+            background: var(--dark);
+            color: white;
+            border-radius: 10px;
+        }
+        
+        .bylaws-section {
+            background: #fff8e1;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border: 1px solid #ffd54f;
+        }
+        
+        .bylaws-header {
+            text-align: center;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .bylaws-content {
+            font-family: 'Courier New', monospace;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        
+        @media (max-width: 768px) {
+            .progress-bar {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .progress-step {
+                margin: 0 10px 30px;
+            }
+            
+            .container {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Sudanese Community Nonprofit Guide <span class="flag"></span> Lansing, MI</h1>
+            <p class="subtitle">Step-by-Step Guide to Forming Your Community Organization with Cultural Considerations</p>
+            <p><strong>Estimated Completion Time:</strong> 6-8 months | <strong>Startup Cost:</strong> $350-$500 (DIY)</p>
+        </header>
+
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar">
+                <div class="progress-step active" data-step="1">
+                    1
+                    <span class="step-label">Planning</span>
+                </div>
+                <div class="progress-step" data-step="2">
+                    2
+                    <span class="step-label">Legal Formation</span>
+                </div>
+                <div class="progress-step" data-step="3">
+                    3
+                    <span class="step-label">Board Formation</span>
+                </div>
+                <div class="progress-step" data-step="4">
+                    4
+                    <span class="step-label">Bylaws & Structure</span>
+                </div>
+                <div class="progress-step" data-step="5">
+                    5
+                    <span class="step-label">IRS 501(c)(3)</span>
+                </div>
+                <div class="progress-step" data-step="6">
+                    6
+                    <span class="step-label">State Compliance</span>
+                </div>
+                <div class="progress-step" data-step="7">
+                    7
+                    <span class="step-label">Launch</span>
+                </div>
+            </div>
+            
+            <div class="nav-buttons">
+                <button class="btn" id="prevBtn">Previous Step</button>
+                <span id="stepIndicator">Step 1 of 7: Planning Phase</span>
+                <button class="btn" id="nextBtn">Next Step</button>
+            </div>
+        </div>
+
+        <!-- Step 1: Planning -->
+        <div class="content-section active" id="step1">
+            <h2>Phase 1: Foundation & Planning</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">Month 1-2</div>
+                    <h3>Community Needs Assessment</h3>
+                    <p><strong>Key Questions for Sudanese Community:</strong></p>
+                    <ul class="checklist">
+                        <li>What are the biggest challenges facing Sudanese families in Lansing?</li>
+                        <li>What cultural traditions are most important to preserve?</li>
+                        <li>How many Sudanese students are at MSU? What are their needs?</li>
+                        <li>What regional/tribal diversity exists within our community?</li>
+                        <li>What resources are currently available vs. what's needed?</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-item">
+                    <h3>Mission Statement Development</h3>
+                    <p><strong>Recommended Template:</strong></p>
+                    <div class="resource-card">
+                        <em>"The Sudanese American Community Association of Lansing (SACA-Lansing) exists to preserve and promote Sudanese cultural heritage, foster unity among Sudanese diaspora, support the successful integration of new arrivals, and contribute positively to the broader Lansing community through education, advocacy, and mutual support."</em>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <h3>Lansing-Specific Advantages</h3>
+                    <ul class="checklist">
+                        <li><strong>MSU Partnership:</strong> African Studies Center, Office of Cultural and Academic Transitions</li>
+                        <li><strong>Capital City Resources:</strong> State government connections, funding opportunities</li>
+                        <li><strong>Existing Networks:</strong> Refugee Development Center, interfaith communities</li>
+                        <li><strong>Cultural Hub:</strong> Growing African diaspora community in Greater Lansing</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <button class="btn" onclick="markStepComplete(1)">Mark This Step Complete</button>
+        </div>
+
+        <!-- Step 2: Legal Formation -->
+        <div class="content-section" id="step2">
+            <h2>Phase 2: Legal Formation (Michigan)</h2>
+            
+            <h3>Step-by-Step Process</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">Month 2</div>
+                    <h3>Choose and Reserve Name</h3>
+                    <ul class="checklist">
+                        <li>Search Michigan LARA Corporation Database</li>
+                        <li>Ensure name includes "Sudanese" for cultural identity</li>
+                        <li>Consider: "Sudanese Community Association of Lansing"</li>
+                        <li>Check website domain availability</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-item">
+                    <h3>Draft Bylaws - Cultural Considerations</h3>
+                    <p><strong>Key Provisions for Sudanese Context:</strong></p>
+                    <ul class="checklist">
+                        <li>Define "Sudanese community" inclusively (all regions, tribes)</li>
+                        <li>Membership tiers with affordable options for students/new arrivals</li>
+                        <li>Voting rights that respect both elders and youth</li>
+                        <li>Cultural committees: Language, Youth, Women's, Newcomer Support</li>
+                        <li>Conflict resolution process honoring traditional mediation</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-item">
+                    <h3>File Articles of Incorporation</h3>
+                    <div class="cost-box">
+                        <strong>Form 102 with Michigan LARA</strong><br>
+                        Filing Fee: $20<br>
+                        Processing Time: 7-10 business days
+                    </div>
+                    <p><strong>Purpose Clause Example:</strong></p>
+                    <p><em>"To promote Sudanese cultural heritage through educational programs, festivals, and language preservation; to provide charitable assistance to Sudanese immigrants and refugees in integration; to foster mutual support and community development among Sudanese-Americans in the Lansing region..."</em></p>
+                </div>
+                
+                <div class="timeline-item">
+                    <h3>Obtain Employer Identification Number (EIN)</h3>
+                    <ul class="checklist">
+                        <li>Free online application at IRS.gov (Form SS-4)</li>
+                        <li>Required for: Bank account, hiring, tax exemption</li>
+                        <li>Received immediately online</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <button class="btn" onclick="markStepComplete(2)">Mark This Step Complete</button>
+        </div>
+
+        <!-- Step 3: Board Formation -->
+        <div class="content-section" id="step3">
+            <h2>Phase 3: Dual Board Formation</h2>
+            
+            <h3>Two-Tier Governance Model</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Board of Directors (Required)</th>
+                        <th>Advisory Board (Recommended)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Legal governance authority</td>
+                        <td>Advisory role only</td>
+                    </tr>
+                    <tr>
+                        <td>Fiduciary responsibility</td>
+                        <td>No legal liability</td>
+                    </tr>
+                    <tr>
+                        <td>Manages operations & finances</td>
+                        <td>Provides wisdom & connections</td>
+                    </tr>
+                    <tr>
+                        <td>7-9 members, elected</td>
+                        <td>7-11 members, appointed</td>
+                    </tr>
+                    <tr>
+                        <td>2-year terms, term limits</td>
+                        <td>2-year terms, renewable</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>Board of Directors - Recommended Composition</h3>
+            <div class="resource-card">
+                <h4>Essential Positions for Sudanese Community:</h4>
+                <ul class="checklist">
+                    <li><strong>President:</strong> Respected leader, bilingual preferred</li>
+                    <li><strong>Vice President:</strong> MSU connection if possible</li>
+                    <li><strong>Secretary:</strong> Bilingual, organized</li>
+                    <li><strong>Treasurer:</strong> Financial literacy required</li>
+                    <li><strong>Cultural Director:</strong> Elder or tradition-keeper</li>
+                    <li><strong>Youth Director:</strong> 18-35 years old</li>
+                    <li><strong>Women's Representative:</strong> Addresses women's specific needs</li>
+                    <li><strong>Newcomer Advocate:</strong> Recently settled refugee</li>
+                </ul>
+            </div>
+            
+            <h3>Advisory Board Formation Process</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">Month 3</div>
+                    <h3>Recruitment Strategy</h3>
+                    <p><strong>Target 3 Categories:</strong></p>
+                    <ul class="checklist">
+                        <li><strong>Cultural Elders (2-3):</strong> Sheikhs, community founders, wisdom keepers</li>
+                        <li><strong>Institutional Bridges (3-4):</strong> MSU professor, city official, interfaith leader</li>
+                        <li><strong>Professional Experts (2-4):</strong> Lawyer, doctor, educator, business owner</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-item">
+                    <h3>Cultural Recruitment Protocol</h3>
+                    <ul class="checklist">
+                        <li><strong>For elders:</strong> Personal visit with small gift (dates, tea)</li>
+                        <li>Use existing relationships and family connections</li>
+                        <li>Frame as: "We need your wisdom to guide our community"</li>
+                        <li>Emphasize modest time commitment: 4 meetings/year</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-item">
+                    <h3>Advisory Board Charter Elements</h3>
+                    <div class="cost-box">
+                        <strong>Download Template Available Below</strong><br>
+                        Includes: Purpose, composition, responsibilities, meeting schedule, cultural protocols
+                    </div>
+                </div>
+            </div>
+            
+            <button class="btn" onclick="markStepComplete(3)">Mark This Step Complete</button>
+        </div>
+
+        <!-- Step 4: Bylaws & Structure -->
+        <div class="content-section" id="step4">
+            <h2>Phase 4: Bylaws & Operational Structure</h2>
+            
+            <div class="bylaws-section">
+                <div class="bylaws-header">
+                    <h3>Sudanese Community Association of Greater Lansing</h3>
+                    <p>Internal Regulations (2026-2027)</p>
+                </div>
+                
+                <div class="bylaws-content">
+                    <h4>Table of Contents:</h4>
+                    <ol>
+                        <li>Discipline and Accountability</li>
+                        <li>Meetings</li>
+                        <li>Expenditure Items and Percentages</li>
+                        <li>Annual Programs</li>
+                        <li>Annual Plan</li>
+                        <li>Monitoring and Evaluation</li>
+                    </ol>
+
+                    <h4>1. Meetings</h4>
+                    <ol>
+                        <li>The Executive Committee shall hold regular meetings at least twice per month.</li>
+                        <li>A meeting is legal with the attendance of a simple majority of members.</li>
+                        <li>Decisions are made by majority vote. In case of a tie, the President's side prevails.</li>
+                        <li>Emergency meetings may be held when necessary.</li>
+                    </ol>
+
+                    <h4>2. Discipline and Accountability</h4>
+                    <ol>
+                        <li>Committee members must attend meetings and participate actively.</li>
+                        <li>In case of repeated absence without acceptable excuse, the committee may take appropriate measures.</li>
+                        <li>All members must adhere to the Code of Conduct and Ethics.</li>
+                    </ol>
+
+                    <h4>3. Expenditure Items and Percentages</h4>
+                    <ol>
+                        <li>In case of death (community support)</li>
+                        <li>Public occasions (hall rentals, etc.)</li>
+                        <li>Administrative supplies</li>
+                        <li>Social assistance</li>
+                    </ol>
+
+                    <h4>4. Annual Programs</h4>
+                    <ol>
+                        <li>Independence Day Celebration</li>
+                        <li>Ramadan Iftar</li>
+                        <li>Eid al-Adha Celebration</li>
+                        <li>Community Social Day (Summer trip with programs including graduate recognition)</li>
+                        <li>Christmas Celebration</li>
+                    </ol>
+
+                    <h4>5. Annual Plan</h4>
+                    <p>The annual plan can be divided into three periods:</p>
+                    <ol>
+                        <li><strong>Short-term Plan (January-March):</strong>
+                            <ul>
+                                <li>Writing the Constitution</li>
+                                <li>Writing Internal Regulations</li>
+                                <li>Collecting data from community contributors</li>
+                                <li>Registering the community organization</li>
+                                <li>Obtaining EIN Number</li>
+                                <li>Opening bank account for the community</li>
+                                <li>Renting a location for the community</li>
+                                <li>Establishing system for monthly/annual contributions</li>
+                            </ul>
+                        </li>
+                        <li><strong>Medium-term Plan (April-August):</strong>
+                            <ul>
+                                <li>Renting a permanent headquarters for the community</li>
+                                <li>Providing necessary equipment for headquarters (chairs, tables, carpets, etc.)</li>
+                                <li>Preparing semi-annual financial report</li>
+                            </ul>
+                        </li>
+                        <li><strong>Long-term Plan (12 months):</strong>
+                            <ul>
+                                <li>[To be developed based on community needs assessment]</li>
+                            </ul>
+                        </li>
+                    </ol>
+
+                    <h4>6. Monitoring and Evaluation</h4>
+                    <ul>
+                        <li>Report every three months</li>
+                        <li>Review of goals</li>
+                        <li>Course correction</li>
+                        <li>Presenting results to members</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>How to Integrate These Bylaws with Legal Requirements</h3>
+            <div class="resource-card">
+                <h4>Key Integration Points:</h4>
+                <ul class="checklist">
+                    <li><strong>Legal vs. Cultural:</strong> The "Executive Committee" = Board of Directors legally</li>
+                    <li><strong>Financial Transparency:</strong> Expenditure items must align with IRS public benefit requirements</li>
+                    <li><strong>Meeting Requirements:</strong> Twice monthly is excellent for community engagement</li>
+                    <li><strong>Annual Programs:</strong> Perfect for 501(c)(3) application - shows cultural and educational activities</li>
+                    <li><strong>Evaluation System:</strong> Quarterly reporting aligns with good nonprofit governance</li>
+                </ul>
+            </div>
+
+            <div class="download-section">
+                <h3>Download Complete Bylaws Template</h3>
+                <button class="btn" onclick="downloadTemplate('complete_bylaws')">Download Bylaws Template</button>
+                <button class="btn btn-secondary" onclick="downloadTemplate('meeting_minutes')">Meeting Minutes Template</button>
+                <button class="btn" onclick="downloadTemplate('code_of_conduct')">Code of Conduct Template</button>
+            </div>
+            
+            <button class="btn" onclick="markStepComplete(4)">Mark This Step Complete</button>
+        </div>
+
+        <!-- Step 5: IRS 501(c)(3) -->
+        <div class="content-section" id="step5">
+            <h2>Phase 5: IRS Tax Exemption</h2>
+            
+            <h3>Choosing Your Application Path</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Form 1023-EZ</th>
+                        <th>Form 1023 (Long Form)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Eligibility:</strong> Projected receipts &lt; $50,000 for 3 years</td>
+                        <td><strong>Eligibility:</strong> Any organization size</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Fee:</strong> $275</td>
+                        <td><strong>Fee:</strong> $600</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Processing:</strong> 2-4 weeks</td>
+                        <td><strong>Processing:</strong> 3-12 months</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Length:</strong> 3 pages</td>
+                        <td><strong>Length:</strong> 28 pages + schedules</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Recommended for:</strong> Most community startups</td>
+                        <td><strong>Needed if:</strong> Large budget or complex activities</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>Using Your Annual Programs in the Application</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>Cultural & Educational Programs (501(c)(3) Qualified)</h3>
+                    <ul class="checklist">
+                        <li><strong>Independence Day Celebration:</strong> Cultural education for broader community</li>
+                        <li><strong>Ramadan Iftar:</strong> Interfaith understanding and cultural exchange</li>
+                        <li><strong>Community Social Day:</strong> Social cohesion and youth development</li>
+                        <li><strong>Graduate Recognition:</strong> Educational achievement celebration</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-item">
+                    <h3>Charitable Programs (501(c)(3) Qualified)</h3>
+                    <ul class="checklist">
+                        <li><strong>Social Assistance:</strong> Direct aid to community members in need</li>
+                        <li><strong>Death Support:</strong> Charitable relief during bereavement</li>
+                        <li><strong>Newcomer Support:</strong> Assistance with integration</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="cost-box">
+                <strong>Important:</strong> Frame all programs as providing <strong>public benefit</strong>.<br>
+                Example: "Our Ramadan Iftar is open to all community members to promote interfaith understanding."
+            </div>
+            
+            <button class="btn" onclick="markStepComplete(5)">Mark This Step Complete</button>
+        </div>
+
+        <!-- Step 6: State Compliance -->
+        <div class="content-section" id="step6">
+            <h2>Phase 6: Michigan State Compliance</h2>
+            
+            <h3>Required State Registrations</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">After IRS Approval</div>
+                    <h3>1. Michigan Tax Exemption</h3>
+                    <ul class="checklist">
+                        <li><strong>Form 3372:</strong> Application for Michigan Tax Exemption</li>
+                        <li>Submit to Michigan Department of Treasury</li>
+                        <li>Exempts from Michigan income tax</li>
+                        <li>Sales/Use Tax Exemption for nonprofit purchases</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-item">
+                    <h3>2. Charitable Registration</h3>
+                    <ul class="checklist">
+                        <li><strong>Form CSN-100:</strong> Initial Charitable Organization Registration</li>
+                        <li>Required BEFORE soliciting donations</li>
+                        <li>File with Michigan Attorney General's Charitable Trust Section</li>
+                        <li><strong>Annual Filing:</strong> Form CSN-50 (due 6 months after fiscal year ends)</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-item">
+                    <h3>3. Local Lansing Requirements</h3>
+                    <ul class="checklist">
+                        <li>Check with Lansing City Clerk for business license requirements</li>
+                        <li>Ensure meeting space complies with zoning regulations</li>
+                        <li>Apply for special event permits for festivals</li>
+                        <li>Consider insurance: General liability, D&O coverage</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Implementing Your Monitoring & Evaluation System</h3>
+            <div class="resource-card">
+                <h4>Quarterly Reporting Schedule:</h4>
+                <ul class="checklist">
+                    <li><strong>March 31:</strong> Q1 Report - Review short-term plan progress</li>
+                    <li><strong>June 30:</strong> Q2 Report - Mid-year financial review</li>
+                    <li><strong>September 30:</strong> Q3 Report - Program evaluation before holidays</li>
+                    <li><strong>December 31:</strong> Q4 Report - Annual review and planning</li>
+                    <li><strong>Annual:</strong> Present comprehensive report to membership</li>
+                </ul>
+            </div>
+            
+            <button class="btn" onclick="markStepComplete(6)">Mark This Step Complete</button>
+        </div>
+
+        <!-- Step 7: Launch -->
+        <div class="content-section" id="step7">
+            <h2>Phase 7: Operational Launch</h2>
+            
+            <h3>Implementing Your Annual Plan</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">Short-term (Jan-Mar)</div>
+                    <h3>Foundation Phase</h3>
+                    <ul class="checklist">
+                        <li>Complete legal registration (LARA, EIN)</li>
+                        <li>Open bank account with 3 signatories required</li>
+                        <li>Establish contribution collection system</li>
+                        <li>Rent temporary meeting space</li>
+                        <li>Begin community data collection</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">Medium-term (Apr-Aug)</div>
+                    <h3>Building Phase</h3>
+                    <ul class="checklist">
+                        <li>Secure permanent headquarters</li>
+                        <li>Furnish with basic equipment</li>
+                        <li>File IRS 501(c)(3) application</li>
+                        <li>Host first major event (Ramadan Iftar or Independence Day)</li>
+                        <li>Prepare first financial report</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">Long-term (Year 1)</div>
+                    <h3>Growth Phase</h3>
+                    <ul class="checklist">
+                        <li>Implement all 5 annual programs</li>
+                        <li>Establish youth and women's committees</li>
+                        <li>Develop partnership with MSU</li>
+                        <li>Create emergency support fund</li>
+                        <li>Build sustainable funding base</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Implementing Your Annual Programs</h3>
+            <div class="resource-card">
+                <h4>Program Implementation Timeline:</h4>
+                <ul class="checklist">
+                    <li><strong>January:</strong> Constitution finalization and adoption</li>
+                    <li><strong>February:</strong> First community meeting to approve bylaws</li>
+                    <li><strong>March-April:</strong> Ramadan Iftar planning and execution</li>
+                    <li><strong>July:</strong> Independence Day celebration</li>
+                    <li><strong>September:</strong> Summer community social day</li>
+                    <li><strong>December:</strong> Christmas celebration and year-end review</li>
+                </ul>
+            </div>
+            
+            <h3>Budget Alignment with Expenditure Items</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Expenditure Category</th>
+                        <th>Recommended % of Budget</th>
+                        <th>Sample Allocation ($10,000 budget)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Administrative Supplies</td>
+                        <td>15%</td>
+                        <td>$1,500</td>
+                    </tr>
+                    <tr>
+                        <td>Public Occasions (Hall rentals, events)</td>
+                        <td>40%</td>
+                        <td>$4,000</td>
+                    </tr>
+                    <tr>
+                        <td>Social Assistance</td>
+                        <td>25%</td>
+                        <td>$2,500</td>
+                    </tr>
+                    <tr>
+                        <td>Death Support Fund</td>
+                        <td>10%</td>
+                        <td>$1,000</td>
+                    </tr>
+                    <tr>
+                        <td>Contingency/Reserve</td>
+                        <td>10%</td>
+                        <td>$1,000</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="download-section">
+                <h3>Complete Launch Package</h3>
+                <button class="btn" onclick="downloadTemplate('annual_plan_calendar')">Annual Plan Calendar</button>
+                <button class="btn btn-secondary" onclick="downloadTemplate('budget_spreadsheet')">Budget Spreadsheet</button>
+                <button class="btn" onclick="downloadTemplate('program_planning')">Program Planning Templates</button>
+            </div>
+            
+            <button class="btn" onclick="markStepComplete(7)">Mark This Step Complete</button>
+        </div>
+
+        <footer>
+            <h3>Need Help? Lansing Resources</h3>
+            <p><strong>Michigan Small Business Development Center:</strong> Free nonprofit consulting</p>
+            <p><strong>Capital Area United Way:</strong> 211 for community resources</p>
+            <p><strong>MSU Community Engaged Learning:</strong> Student volunteers and partnerships</p>
+            <p><strong>Pro Bono Legal:</strong> Michigan State University College of Law clinics</p>
+            <p style="margin-top: 1rem;">© 2024 Sudanese Community Nonprofit Guide | Updated for Lansing, MI</p>
+        </footer>
+    </div>
+
+    <script>
+        let currentStep = 1;
+        const totalSteps = 7;
+        
+        // Initialize progress
+        updateProgress();
+        
+        // Navigation buttons
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            if (currentStep < totalSteps) {
+                currentStep++;
+                updateProgress();
+            }
+        });
+        
+        document.getElementById('prevBtn').addEventListener('click', () => {
+            if (currentStep > 1) {
+                currentStep--;
+                updateProgress();
+            }
+        });
+        
+        // Step click navigation
+        document.querySelectorAll('.progress-step').forEach(step => {
+            step.addEventListener('click', () => {
+                currentStep = parseInt(step.dataset.step);
+                updateProgress();
+            });
+        });
+        
+        function updateProgress() {
+            // Update progress steps
+            document.querySelectorAll('.progress-step').forEach(step => {
+                const stepNum = parseInt(step.dataset.step);
+                step.classList.remove('active', 'completed');
+                
+                if (stepNum === currentStep) {
+                    step.classList.add('active');
+                } else if (stepNum < currentStep) {
+                    step.classList.add('completed');
+                }
+            });
+            
+            // Update content sections
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.remove('active');
+                if (section.id === `step${currentStep}`) {
+                    section.classList.add('active');
+                }
+            });
+            
+            // Update step indicator
+            const stepTitles = [
+                'Step 1 of 7: Planning Phase',
+                'Step 2 of 7: Legal Formation',
+                'Step 3 of 7: Board Formation',
+                'Step 4 of 7: Bylaws & Structure',
+                'Step 5 of 7: IRS 501(c)(3) Application',
+                'Step 6 of 7: State Compliance',
+                'Step 7 of 7: Operational Launch'
+            ];
+            document.getElementById('stepIndicator').textContent = stepTitles[currentStep - 1];
+            
+            // Update button states
+            document.getElementById('prevBtn').disabled = currentStep === 1;
+            document.getElementById('nextBtn').disabled = currentStep === totalSteps;
+        }
+        
+        function markStepComplete(step) {
+            const stepElement = document.querySelector(`.progress-step[data-step="${step}"]`);
+            stepElement.classList.add('completed');
+            alert(`Step ${step} marked as complete!`);
+            
+            // Auto-advance if not last step
+            if (step < totalSteps) {
+                currentStep = step + 1;
+                updateProgress();
+            }
+        }
+        
+        function downloadTemplate(templateName) {
+            const templates = {
+                'complete_bylaws': 'Sudanese_Community_Bylaws_Template.docx',
+                'meeting_minutes': 'Meeting_Minutes_Template.docx',
+                'code_of_conduct': 'Code_of_Conduct_Template.docx',
+                'annual_plan_calendar': 'Annual_Plan_Calendar.xlsx',
+                'budget_spreadsheet': 'Budget_Spreadsheet.xlsx',
+                'program_planning': 'Program_Planning_Templates.zip'
+            };
+            
+            alert(`Downloading ${templates[templateName]} - This is a demo. In a real application, this would download the actual template.`);
+        }
+        
+        // Auto-save progress to localStorage
+        setInterval(() => {
+            localStorage.setItem('nonprofitGuideProgress', currentStep.toString());
+        }, 5000);
+        
+        // Load saved progress on page load
+        window.addEventListener('load', () => {
+            const savedStep = localStorage.getItem('nonprofitGuideProgress');
+            if (savedStep) {
+                currentStep = parseInt(savedStep);
+                updateProgress();
+            }
+        });
+    </script>
+</body>
+</html>
